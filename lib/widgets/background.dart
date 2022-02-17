@@ -9,8 +9,8 @@ class Background extends StatelessWidget {
     var boxDecoration = BoxDecoration(
         gradient: LinearGradient(
             colors: [
-              Color(0xff2E305F),
-              Color(0xff202333),
+              Color.fromARGB(255, 208, 240, 157),
+              Color.fromARGB(255, 58, 139, 20),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

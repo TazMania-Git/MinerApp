@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minerapp/widgets/background.dart';
 import 'package:minerapp/widgets/indicators.dart';
+import 'package:minerapp/widgets/list_payouts.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -9,9 +10,10 @@ class HomeScreen extends StatelessWidget {
       body: Stack(children: [
         Background(),
         Container(
-            margin: EdgeInsetsDirectional.only(top: 70),
+            margin: EdgeInsetsDirectional.only(top: 30),
             alignment: Alignment.topCenter,
-            child: Indicator())
+            child: Indicator()),
+            ListPayouts()
       ]),
     );
   }
