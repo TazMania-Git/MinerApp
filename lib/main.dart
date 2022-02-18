@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minerapp/providers/provider.dart';
+import 'package:minerapp/providers/miner_provider.dart';
 import 'package:minerapp/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
