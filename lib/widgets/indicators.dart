@@ -1,5 +1,5 @@
 import 'package:percent_indicator/percent_indicator.dart';
-
+import 'package:liquid_progress_indicator_ns/liquid_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 class Indicator extends StatelessWidget {
@@ -25,6 +25,60 @@ class indicatorPercent extends StatelessWidget {
         fontSize: 30,
         fontStyle: FontStyle.italic,
         fontWeight: FontWeight.bold);
+
+    // return CircularIndicator(textStyle: textStyle);
+    return Column(
+      children: [
+        Text("Next Payout", style: textStyle),
+        LiquidCircularIndicator(),
+        txtDatos()
+      ],
+    );
+  }
+}
+
+class LiquidCircularIndicator extends StatelessWidget {
+  const LiquidCircularIndicator({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var textStyle = TextStyle(
+        color: Color.fromARGB(255, 0, 51, 26),
+        fontSize: 30,
+        fontStyle: FontStyle.italic,
+        fontWeight: FontWeight.bold);
+
+    return Container(
+      height: 200,
+      width: 200,
+      child: LiquidCircularProgressIndicator(
+        value: 0.50, // Defaults to 0.5.
+        valueColor: AlwaysStoppedAnimation(Color.fromARGB(
+            255, 30, 233, 57)), // Defaults to the current Theme's accentColor.
+        backgroundColor:
+            Colors.white, // Defaults to the current Theme's backgroundColor.
+        borderColor: Color.fromARGB(255, 4, 126, 67),
+        borderWidth: 5.0,
+        direction: Axis
+            .vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.vertical.
+        center: Text("50 %", style: textStyle),
+      ),
+    );
+  }
+}
+
+/**
+ * ! CIRCULAR INDICATOR, NOT LIQUID
+class CircularIndicator extends StatelessWidget {
+  const CircularIndicator({
+    Key? key,
+    required this.textStyle,
+  }) : super(key: key);
+
+  final TextStyle textStyle;
+
+  @override
+  Widget build(BuildContext context) {
     return CircularPercentIndicator(
       footer: txtDatos(),
       header: Text("Next Payout", style: textStyle),
@@ -40,6 +94,7 @@ class indicatorPercent extends StatelessWidget {
     );
   }
 }
+ */
 
 class txtDatos extends StatelessWidget {
   const txtDatos({
