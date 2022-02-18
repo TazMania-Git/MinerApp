@@ -54,7 +54,7 @@ class txtDatos extends StatelessWidget {
         fontStyle: FontStyle.italic,
         fontWeight: FontWeight.bold);
     var resultStyle = TextStyle(
-        color: Color.fromARGB(255, 0, 51, 26),
+        color: Color.fromARGB(255, 241, 221, 33),
         fontSize: 22,
         fontWeight: FontWeight.bold);
     ;
