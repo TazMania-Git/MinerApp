@@ -3,6 +3,8 @@ import 'dart:convert' as convert;
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
+import '../models/result_model.dart';
+
 class MinerProvider extends ChangeNotifier {
   String _baseUrl = 'eth.2miners.com';
   String _wallet =
@@ -21,9 +23,16 @@ class MinerProvider extends ChangeNotifier {
 
   getWalletAccount() async {
     final getJsonData = await _getJsonData('api/accounts/${_wallet}');
-    print(getJsonData);
-    //   final nowPlayingResponse = NowPlayingResponse.fromJson(getJsonData);
+    // print(getJsonData);
+    final accountResponse = AccountResponse.fromJson(getJsonData);
     //   onDisplayMovies = nowPlayingResponse.results;
-    // }
+    print(accountResponse.hashrate / 1000000);
+    print(accountResponse.stats.balance);
+    print(accountResponse.stats.paid);
+    for (var i = 0; i < accountResponse.payments.length; i++) {
+    print(accountResponse.payments[i].tx);
+    }
+
+
   }
 }
